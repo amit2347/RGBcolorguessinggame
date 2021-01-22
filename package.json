@@ -1,0 +1,14 @@
+{
+  "name": "firebase-app-continued",
+  "version": "1.0.0",
+  "description": "Web Hosting For Personal Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amit",
+  "license": "ISC",
+  "dependencies": {
+    "firechat": "^3.0.1"
+  }
+}

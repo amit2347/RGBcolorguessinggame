@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Global Chat</title>
+      <link rel="manifest" href="/site.webmanifest">
+      <script src="https://kit.fontawesome.com/65949f7bba.js" crossorigin="anonymous"></script>
+      <!-- <link rel="stylesheet" type="text/css" href="colorGame.css"> -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+      <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+      <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+      <link rel="stylesheet" href="css/footer.css" class="rel">
+      <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+      <script>
+         // Your web app's Firebase configuration
+         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+         var firebaseConfig = {
+           apiKey: "AIzaSyDL7OQE5o3izWhDw3Kdw9_Cmnmji6T-Pus",
+           authDomain: "rgb-colorgame-51243.firebaseapp.com",
+           databaseURL: "https://rgb-colorgame-51243.firebaseio.com",
+           projectId: "rgb-colorgame-51243",
+           storageBucket: "rgb-colorgame-51243.appspot.com",
+           messagingSenderId: "42282573608",
+           appId: "1:42282573608:web:3afeb7a2382b933a01fa1d",
+           measurementId: "G-2BF8SJN3L2"
+         };
+         // Initialize Firebase
+         firebase.initializeApp(firebaseConfig);
+         firebase.analytics();
+         
+      </script>
+      <script src="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <link rel="stylesheet" href="css/chat.css" class="css">
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+         <a class="navbar-brand" href="index.html">RGB Game</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="weather23.html">Today's Weather</a>
+               </li>
+               <li class="nav-item">
+                  <a href="highScore.html" class="nav-link">Global High Score</a>
+               </li>
+               <li class="nav-item">
+                  <a href="firechat.html" class="nav-link">Chat Room</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <hr>
+      <div class="container">
+         <button id="loginGoogle" onclick="authenticateUser()" type="button" class="btn btn-primary">Sign In With Google to Chat</button>
+         <hr>
+         <ul id="messages" class="list-group list-group-flush"></ul>
+         <form id="sendMessage" onsubmit="return sendMessage();">
+            <input id="message" placeholder="Enter message" autocomplete="off">
+            <input type="submit">
+         </form>
+      </div>
+      <div class="footer">
+         <p>Made with <i class="fas fa-heart"></i></i> by Amit,Darshan,Sahil @ BVCOENM Kharghar</p>
+      </div>
+      <script src="js/firechat1.js"></script>
+   </body>
+</html>
